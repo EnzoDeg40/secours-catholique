@@ -1,0 +1,51 @@
+#imgsViewer{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+
+    position: absolute;
+    z-index: 11;
+    overflow:auto;
+}
+
+#imgsViewer div{
+    background-color: white;
+    border-radius: 10px;
+
+    margin: 15px;
+    padding: 15px;
+
+    width: calc(100% - 60px);
+    max-width: 700px;
+    margin: 15px auto;
+}
+
+#imgsViewer img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+#imgsViewer .logo{
+    margin-top: 25px;
+    margin-bottom: 5px;
+    max-width: 100px;
+    border-radius: 5px;
+}
+
+#imgsViewer .close {
+    background-color: #015291;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 999px;
+    border-width: 0;
+    margin: 5px auto;
+}
+
+#imgsViewer .video {
+    background-color: #d13b0d;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 999px;
+    border-width: 0;
+    margin: 5px auto;
+}

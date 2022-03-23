@@ -1,0 +1,72 @@
+.sidenav {
+    height: calc(100% - 60px);
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #363E4B;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+
+    position: absolute;
+    z-index: 6;
+
+    white-space: nowrap;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #000000;
+    background-color: #FFD561;
+}
+
+.sidenav a.current {
+    color: #000000;
+    background-color: #FFD561;
+}
+
+.sidenav a:hover.ignore{
+    color: #ffffff;
+    background-color: #363E4B;
+}
+
+.sidenav a img{
+    height: 20px;
+    vertical-align: text-top;
+    margin-right: 5px;
+}
+
+.sidenav .logo{
+    /*width: 100px;*/
+    width: 70%;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidenav .separator{
+    height: 75px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
