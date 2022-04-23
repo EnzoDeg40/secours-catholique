@@ -1,4 +1,3 @@
-
 // Récupère la taille de l'écran
 let x = window.innerWidth || docElem.clientWidth || body.clientWidth;
 
@@ -19,14 +18,8 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a href="https://edstudio.fr">EdStudio</a>'
 }).addTo(map);
 
-
-
 var reponseJson;
 loadJson();
-
-
-
-
 
 // Géolocalisation
 function onLocationFound(e) {

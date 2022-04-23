@@ -7,10 +7,10 @@ async function loadJson() {
         //console.log(reponseJson[i][1]);
         
         const name = reponseJson[i][0];
-        const x = reponseJson[i][1].split(', ')[0];
-        const y = reponseJson[i][1].split(', ')[1];
-        const img = reponseJson[i][2];
-        const rot = reponseJson[i][3];
+        const x    = reponseJson[i][1].split(', ')[0];
+        const y    = reponseJson[i][1].split(', ')[1];
+        const img  = reponseJson[i][2];
+        const rot  = reponseJson[i][3];
         const additionalImgs = reponseJson[i][4];
 
         L.marker([x, y]).addTo(map)
@@ -37,7 +37,8 @@ function closeNav() {
 
 // Ouvre un panorama
 function panoOpen(q, x, y, z, a){
-    const url = `pano.html?q=${q}&x=${x}&y=${y}&z=${z}&a=${a}`;
+    const name = q.split('/')[0];
+    const url = `pano.php?q=${q}&x=${x}&y=${y}&z=${z}&a=${a}&img=${name}`;
     console.log(url);
     document.getElementById('panorama').innerHTML = 
     `<img src="assets/icons/close.svg" alt="" onclick="panoClose()">\
@@ -89,4 +90,8 @@ function parkour(){
         ],
         language: 'fr'
     }).addTo(map);
+}
+
+function hideStart(){
+    document.getElementById('start').style.display = 'none';
 }

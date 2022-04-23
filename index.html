@@ -12,54 +12,129 @@
     <meta name="theme-color" content="#015293">
 
     <title>Secours Catholique - OutDoor</title>
-    <link rel="stylesheet" href="css/home.css">
+
+    <link rel="stylesheet" href="lib/leaflet/leaflet.css">
+    <link rel="stylesheet" href="lib/leaflet-routing-machine/leaflet-routing-machine.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidenav.css">
+
+    <link rel="prefetch" href="assets/icons/alt_route.svg" />
+    <link rel="prefetch" href="assets/icons/eye.svg" />
+    <link rel="prefetch" href="assets/icons/share.svg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <!--
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    -->
 </head>
 <body>
-    <h1>Exposition Virtuelle Paris</h1>
-    <center>
-        <img class="illustration" src="assets/images/home.jpg" alt="">
-    </center>
+    <!-- Accueil Start -->
+    <div id="start">
+        <div class="content">
+            <center>
+                <h1>Exposition Virtuelle Paris</h1>
+                <img class="illustration" src="assets/images/home.jpg" alt="">
+            </center>
+            
+            <p>
+                C’est l’histoire de rencontres.<br>
+                Une rencontre entre Païta et l’art, le dessin.<br>
+                Une rencontre entre Païta, et une association, le Secours Catholique.<br>
+                Une rencontre entre le Secours Catholique et des Urban sketchers®.<br>
+                Une rencontre entre Païta et des Urban sketchers®.<br>
+                <br>
+                Païta est une artiste, précurseur, dans les années 1950, du croquis urbain. Elle a dessiné Paris pendant des
+                décennies.<br>
+                <br>
+                Nous vous proposons d’aller à la rencontre de Païta, à travers ses œuvres et les œuvres des Urban sketchers®, qui
+                ont réinterprété certaines de ses œuvres.<br>
+                <br>
+                Grâce à la carte, découvrez le Paris de Païta réinterprété par 7 talentueux urban sketchers®<br>
+                <br>
+                Le Secours Catholique a décidé d’organiser cette exposition pour soutenir le patrimoine artistique de Païta, qui a
+                très généreusement décidé de léguer son patrimoine à notre association, le moment venu.<br>
+                <br>
+                Un grand merci à elle pour son soutien !<br>
+                <br>
+                Bonne visite à vous !<br>
+            </p>
+            
+            <p class="signature"><b>L'équipe du Secours Catholique</b></p>
+            
+            <br><br><br><br>
+            
+            
+            <center>
+                <button onclick="hideStart();">Débuter l'exposition</button>
+            </center>
+            
+            <br><br><br><br>
+            
+            <p>
+                <i>Contact Secours Catholique :</i><br>
+                Norah BILET <br>
+                <a href="tel:+33145497535">01 45 49 75 35</a><br>
+                <a href="mailto:norah.bilet@secours-catholique.org">norah.bilet@secours-catholique.org</a><br>
+            </p>
+        </div>
+    </div>
+    <!-- Accueil End -->
 
-    <p>
-        C’est l’histoire de rencontres.<br> 
-        Une rencontre entre Païta et l’art, le dessin.<br>
-        Une rencontre entre Païta, et une association, le Secours Catholique.<br>
-        Une rencontre entre le Secours Catholique et des Urban sketchers®.<br>
-        Une rencontre entre Païta et des Urban sketchers®.<br>
-        <br>
-        Païta est une artiste, précurseur, dans les années 1950, du croquis urbain. Elle a dessiné Paris pendant des décennies.<br>
-        <br>
-        Nous vous proposons d’aller à la rencontre de Païta, à travers ses œuvres et les œuvres des Urban sketchers®, qui ont réinterprété certaines de ses œuvres.<br>
-        <br>
-        Grâce à la carte, découvrez le Paris de Païta réinterprété par 7 talentueux urban sketchers®<br>
-        <br>
-        Le Secours Catholique a décidé d’organiser cette exposition pour soutenir le patrimoine artistique de Païta, qui a très généreusement décidé de léguer son patrimoine à notre association, le moment venu.<br>
-        <br>
-        Un grand merci à elle pour son soutien !<br>
-        <br>
-        Bonne visite à vous !<br>
-    </p>
+    <!--Sidenav Start-->
+    <div id="sidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn ignore" onclick="closeNav()">&times;</a>
+        <a href="https://www.secours-catholique.org/" class="ignore"><img class="logo" src="logo.png" alt=""></a>
+        <a href="#" class="current">Accueil</a>
+        <a href="https://wordpress.gwenaellepont.fr/paita/">Païta</a>
+        <a href="https://wordpress.gwenaellepont.fr/usk/">USK</a>
 
-    <p class="signature"><b>L'équipe du Secours Catholique</b></p>
+        <div class="separator"></div>
 
-    <br><br><br><br>
+        <a href="https://www.secours-catholique.org/">
+            <img src="assets/icons/language_white.svg" alt="">
+            <span>Site Web</span>
+        </a>
 
-    <center>
-        <a class="btn" href="map.html">Visitez le site</a>
-    </center>
+        <a href="https://www.facebook.com/Secours.Catholique.Caritas.france">
+            <img src="https://edstudio.fr/api/icons/Facebook - Negative.svg" alt="">
+            <span>Facebook</span>
+        </a>
 
-    <br><br><br><br>
+        <a href="https://twitter.com/caritasfrance">
+            <img src="https://edstudio.fr/api/icons/Twitter - Negative.svg" alt="">
+            <span>Twitter</span>
+        </a>
 
-    <p>
-        <i>Contact Secours Catholique :</i><br>
-        Norah BILET <br>
-        <a href="tel:+33145497535">01 45 49 75 35</a><br>
-        <a href="mailto:norah.bilet@secours-catholique.org">norah.bilet@secours-catholique.org</a><br>
-    </p>
-    
+        <a href="https://www.youtube.com/channel/UC0EPY8YoLEKTauiRKrI-QEA">
+            <img src="https://edstudio.fr/api/icons/YouTube - Negative.svg" alt="">
+            <span>YouTube</span>
+        </a>
+        
+        <a href="https://fr.linkedin.com/company/secours-catholique-france">
+            <img src="https://edstudio.fr/api/icons/LinkedIn - Negative.svg" alt="">
+            <span>LinkedIn</span>
+        </a>
+
+    </div>
+
+    <div class="top">
+        <img class="btnOpenSideBar" src="assets/icons/menu.svg" onclick="openNav()" alt="">
+        <br>
+        <img class="btnOpenSideBar" src="assets/icons/timeline.svg" onclick="parkour()" alt="">
+    </div>
+    <img class="btnShowLocalisation" src="assets/icons/near_me.svg" onclick="locateMe()" alt="">
+    <!--Sidenav END -->
+
+    <div id="panorama"></div>
+    <div id="map"></div>
+
+    <script src="lib/leaflet/leaflet.js"></script>
+    <script src="lib/leaflet-routing-machine/leaflet-routing-machine.min.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

@@ -51,6 +51,7 @@ infospot.position.set(x, y, z);
 infospot.addEventListener('click', function(){showImgs();});
 
 // Génère les images à afficher
+/*
 var imgsViewer = document.getElementById("imgsViewer");
 if(a == "paita+usk"){
     imgsViewer.innerHTML = `
@@ -81,7 +82,7 @@ if(a == "paita+usk"){
     `;
     console.log("other");
 }
-console.log(a);
+console.log(a);*/
 
 // Définit la photosphère
 const panorama = new PANOLENS.ImagePanorama('assets/360/' + query);
