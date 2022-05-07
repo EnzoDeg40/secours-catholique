@@ -79,8 +79,8 @@
                 <button class="close" onclick="hideImgs()">Fermer les médias</button><br>
             
                 <?php
-                    $paitaLogoHasDisplay = false;
-                    $uskLogoHasDisplay = false;
+                    //$paitaLogoHasDisplay = false;
+                    //$uskLogoHasDisplay = false;
 
                     // Pour chaque fichier
                     foreach ($ls as $key => $value) {
@@ -94,17 +94,32 @@
                         $fileSplit = explode(".", $value);
                         $fileExtension = end($fileSplit);
 
-                        // Affiche la signature de paita si le nom du fichier contient "Paita" et qu'il n'a jamais été affiché 
-                        if(strpos($value, "Paita") && $paitaLogoHasDisplay == false){
+                        // Affiche la signature de paita si le nom du fichier contient "Paita"
+                        if(strpos($value, "Paita")){
                             echo('<img class="logo" src="assets/images/paita-black.png">');
-                            $paitaLogoHasDisplay = true;
                         }
 
+                        // Affiche la signature de USK si le nom du fichier contient "USK"
+                        if(strpos($value, "USK")){
+                            echo('<img class="logo" src="assets/images/usk.png">');
+                        }
+
+                        // Affiche l'image vidéo si le nom du fichier contient "YT"
+                        if(strpos($value, "YT")){
+                            echo('<img class="logo" src="assets/images/video.png">');
+                        }
+
+                        // Affiche la signature de paita si le nom du fichier contient "Paita" et qu'il n'a jamais été affiché 
+                        /*if(strpos($value, "Paita") && $paitaLogoHasDisplay == false){
+                            echo('<img class="logo" src="assets/images/paita-black.png">');
+                            $paitaLogoHasDisplay = true;
+                        }*/
+
                         // Affiche la signature de USK si le nom du fichier contient "USK" ou "YT" et qu'il n'a jamais été affiché 
-                        if((strpos($value, "USK") OR strpos($value, "YT")) && $uskLogoHasDisplay == false){
+                        /*if((strpos($value, "USK") OR strpos($value, "YT")) && $uskLogoHasDisplay == false){
                             echo('<img class="logo" src="assets/images/usk.png">');
                             $uskLogoHasDisplay = true;
-                        }
+                        }*/
 
                         // Si c'est une image, on l'affiche
                         if($fileExtension == "jpg" OR $fileExtension == "jpeg" OR $fileExtension == "png"){
