@@ -56,62 +56,77 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <?php
+        // Affiche les erreurs d'exécution PHP
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
+
+        // Récupère le nom du panorama
+        $nameFolder = $_GET["img"];
+
+        // Définit le chemin du dossier
+        $dir = "assets/360/$nameFolder/Images/";
+
+        // Récupère le contenu du dossier
+        $ls = scandir($dir);
+    ?>
 </head>
 <body>
     <div id="imgsViewer" style="display:none;">
         <div>
             <center>
-                <button class="close" onclick="hideImgs()">Fermer les images</button><br>
+                <button class="close" onclick="hideImgs()">Fermer les médias</button><br>
             
                 <?php
-                    // Affiche les erreurs
-                    ini_set('display_errors', 1);
-                    ini_set('display_startup_errors', 1);
-                    error_reporting(E_ALL);
-                    
-                    $nameFolder = $_GET["img"];
-                    $dir = "assets/360/$nameFolder/";
-                    $ls = scandir($dir);
+                    $paitaLogoHasDisplay = false;
+                    $uskLogoHasDisplay = false;
 
+                    // Pour chaque fichier
                     foreach ($ls as $key => $value) {
 
+                        // Si c'est une valeur systeme, on passe à la suivante
                         if($value == "." OR $value == ".."){
-                            continue;
-                        }
-
-                        if(!is_dir($dir.$value)){
-                            continue;
-                        }
-
-                        //echo($dir.$value.'<br>');
-
-                        $ls = scandir($dir.$value);
-                        
-                        if($value == "USK"){
-                            print('<img class="logo" src="assets/images/usk.png">');
-                        }
-                        elseif($value == "Paita"){
-                            print('<img class="logo" src="assets/images/paita-black.png">');
-                        }
-                        else{
-                            print("<h1>$value</h1>");                        
+                           continue;
                         }
                         
-                        foreach ($ls as $key => $image) {
-                            if($image == "." OR $image == ".."){
-                                continue;
-                            }
+                        // Récupère l'extension du fichier
+                        $fileSplit = explode(".", $value);
+                        $fileExtension = end($fileSplit);
 
-                            print("<img src=\"$dir$value/$image\"><br>");
+                        // Affiche la signature de paita si le nom du fichier contient "Paita" et qu'il n'a jamais été affiché 
+                        if(strpos($value, "Paita") && $paitaLogoHasDisplay == false){
+                            echo('<img class="logo" src="assets/images/paita-black.png">');
+                            $paitaLogoHasDisplay = true;
                         }
 
+                        // Affiche la signature de USK si le nom du fichier contient "USK" ou "YT" et qu'il n'a jamais été affiché 
+                        if((strpos($value, "USK") OR strpos($value, "YT")) && $uskLogoHasDisplay == false){
+                            echo('<img class="logo" src="assets/images/usk.png">');
+                            $uskLogoHasDisplay = true;
+                        }
+
+                        // Si c'est une image, on l'affiche
+                        if($fileExtension == "jpg" OR $fileExtension == "jpeg" OR $fileExtension == "png"){
+                            echo('<img src="'.$dir.$value.'">');
+                        }
+
+                        // Si c'est un fichier texte, lit le contenu et affiche un iframe youtube
+                        if($fileExtension == "txt"){
+                            $data = file_get_contents($dir.$value);
+                            echo('
+                                <iframe
+                                    class="youtube-iframe"
+                                    width="700" height="390"
+                                    src="https://www.youtube.com/embed/'.$data.'"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                                </iframe>'
+                            );
+                        }
                     }
-
-                    //<img class="logo" src="assets/images/usk.png">
-                    //<img src="assets/360/Pont%20Marie/usk.jpg">
-                    //<button class="video" onclick="watch()">Voir la vidéo</button><br>
                 ?>
-                <button class="close" onclick="hideImgs()">Fermer les images</button><br>
+                <button class="close" onclick="hideImgs()">Fermer les médias</button><br>
             </center>
         </div>            
     </div>
