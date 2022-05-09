@@ -16,28 +16,9 @@ function hideImgs(){
     imgsViewer.style.display = "none";
 }
 
-function watch(){
-    window.open("assets/videos/matlet%20paita%209.mp4", '_blank').focus();
-}
-
-
-function switchImgs(){
-    let img = imgsViewer.getElementsByTagName('img');
-    let btn = imgsViewer.getElementsByTagName('img');
-    if(imgSelect == 1){
-        img[0].style.display = 'block'
-        img[1].style.display = 'none'
-        imgSelect = 0;
-    }else{
-        img[0].style.display = 'none'
-        img[1].style.display = 'block'
-        imgSelect = 1;
-    }
-}
-
 var imgSelect = 1;
 
-// Récupère les varaibles de l'url
+// Récupère les variables de l'url
 var query = gup('q', window.location.href);
 var folder = query.split('/')[0];
 var x = parseInt(gup('x', window.location.href));

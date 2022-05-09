@@ -52,7 +52,8 @@
         }
         
     </style>
-    <link rel="stylesheet" href="css/pano.css">
+    <link rel="stylesheet" href="css/pano-pc.css">
+    <link rel="stylesheet" href="lib/carousel/carousel.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -131,12 +132,88 @@
         </div>            
     </div>
 
+    <!--<div id="imgsViwerPC" style="display:none;">-->
+    <div id="imgsViwerPC">
+        <span class="controler">
+            <button onclick="prevCarousel()"><img src="assets/icons/left.png" alt=""></button>
+        </span>
+
+        <div id="carousel">
+            <?php
+                // Pour chaque fichier
+                foreach ($ls as $key => $value) {
+
+                    // Si c'est une valeur systeme, on passe à la suivante
+                    if($value == "." OR $value == ".."){
+                        continue;
+                    }
+                    
+                    // Récupère l'extension du fichier
+                    $fileSplit = explode(".", $value);
+                    $fileExtension = end($fileSplit);
+
+                    echo('<div class="element">');
+
+                    // Affiche la signature de paita si le nom du fichier contient "Paita"
+                    if(strpos($value, "Paita")){
+                        echo('<img class="logo" src="assets/images/paita-black.png" alt="Paita">');
+                    }
+
+                    // Affiche la signature de USK si le nom du fichier contient "USK"
+                    if(strpos($value, "USK")){
+                        echo('<img class="logo" src="assets/images/usk.png" alt="USK">');
+                    }
+
+                    // Affiche l'image vidéo si le nom du fichier contient "YT"
+                    if(strpos($value, "YT")){
+                        echo('<img class="logo" src="assets/images/video.png">');
+                    }
+
+                    echo('<br><br>');
+
+                    // Si c'est une image, on l'affiche
+                    if($fileExtension == "jpg" OR $fileExtension == "jpeg" OR $fileExtension == "png"){
+                        echo('<img src="'.$dir.$value.'">');
+                    }
+
+                    // Si c'est un fichier texte, lit le contenu et affiche un iframe youtube
+                    if($fileExtension == "txt"){
+                        $data = file_get_contents($dir.$value);
+                        echo('
+                            <iframe
+                                class="youtube-iframe"
+                                width="650" height="390"
+                                src="https://www.youtube.com/embed/'.$data.'"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                            </iframe>'
+                        );
+                    }
+
+                    echo('</div>');
+                }
+            ?>
+        </div>
+        
+        <span class="controler">
+            <button onclick="nextCarousel()"><img src="assets/icons/right.png" alt=""></button>
+        </span>
+    </div>
+
+    <!--
+    <div class="controler">
+        <button onclick="prevCarousel()"><img src="assets/icons/left.png" alt=""></button>
+        <button onclick="nextCarousel()"><img src="assets/icons/right.png" alt=""></button>
+    </div>
+                -->
+
     <div id="loading">
         <div></div>
         <div></div>
     </div>
     <script src="lib/panolens/three.min.js"></script>
     <script src="lib/panolens/panolens.min.js"></script>
+    <script src="lib/carousel/carousel.js"></script>
     <script src="js/pano.js"></script>
 </body>
 </html>

@@ -1,0 +1,38 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    background-color: #363e4b;
+    color: white;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content{
+    text-align: center;
+}
+
+.links a, .links a:visited{
+    text-decoration: none;
+    color: white;
+}
+
+.links{
+    display: flex;
+}
+
+.links a{
+    padding: 10px;
+    min-width: 150px;
+    margin: 15px;
+    border-radius: 5px;
+}
+
+.links a:hover{
+    background-color: rgba(124, 124, 124, 0.531)
+}
+
+.links img{
+    height: 92px;
+}

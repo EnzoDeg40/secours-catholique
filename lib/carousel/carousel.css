@@ -1,0 +1,54 @@
+body {
+    background-color: black;
+}
+
+#carousel {
+    width: 576px;
+    overflow-x: auto;
+    white-space: nowrap;
+    background: rgb(255, 255, 255);
+    margin: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.element {
+    height: 512px;
+    width: 512px;
+    padding: 32px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.element img {
+    width: 100%;
+    max-height: 100%;
+}
+
+.element .logo {
+    height: 60px;
+    width: auto;
+}
+
+.controler button {
+    width: 100px;
+    height: 100px;
+
+    color: white;
+    background-color: #ec6348;
+
+    border: none;
+    border-radius: 999px;
+
+    cursor: pointer;
+}
+
+.controler button:hover {
+    background-color: #f28f63;
+}
+
+.controler button img {
+    width: 50%;
+    height: 50%;
+}
