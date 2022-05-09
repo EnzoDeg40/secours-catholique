@@ -84,50 +84,11 @@
     </div>
     <!-- Accueil End -->
 
-    <!--Sidenav Start-->
-    <div id="sidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn ignore" onclick="closeNav()">&times;</a>
-        <a href="https://www.secours-catholique.org/" class="ignore"><img class="logo" src="logo.png" alt=""></a>
-        <a href="#" class="current">Accueil</a>
-        <a href="https://wordpress.gwenaellepont.fr/paita/">Païta</a>
-        <a href="https://wordpress.gwenaellepont.fr/usk/">USK</a>
-
-        <div class="separator"></div>
-
-        <a href="https://www.secours-catholique.org/">
-            <img src="assets/icons/language_white.svg" alt="">
-            <span>Site Web</span>
-        </a>
-
-        <a href="https://www.facebook.com/Secours.Catholique.Caritas.france">
-            <img src="https://edstudio.fr/api/icons/Facebook - Negative.svg" alt="">
-            <span>Facebook</span>
-        </a>
-
-        <a href="https://twitter.com/caritasfrance">
-            <img src="https://edstudio.fr/api/icons/Twitter - Negative.svg" alt="">
-            <span>Twitter</span>
-        </a>
-
-        <a href="https://www.youtube.com/channel/UC0EPY8YoLEKTauiRKrI-QEA">
-            <img src="https://edstudio.fr/api/icons/YouTube - Negative.svg" alt="">
-            <span>YouTube</span>
-        </a>
-        
-        <a href="https://fr.linkedin.com/company/secours-catholique-france">
-            <img src="https://edstudio.fr/api/icons/LinkedIn - Negative.svg" alt="">
-            <span>LinkedIn</span>
-        </a>
-
-    </div>
-
-    <div class="top">
-        <img class="btnOpenSideBar" src="assets/icons/menu.svg" onclick="openNav()" alt="">
-        <br>
-        <img class="btnOpenSideBar" src="assets/icons/timeline.svg" onclick="parkour()" alt="">
-    </div>
-    <img class="btnShowLocalisation" src="assets/icons/near_me.svg" onclick="locateMe()" alt="">
-    <!--Sidenav END -->
+    <?php 
+        // Lit et affiche le contenu du fichier 
+        $sidenav = file_get_contents('sidenav.html');
+        echo $sidenav;
+    ?>
 
     <div id="panorama"></div>
     <div id="map"></div>
@@ -136,5 +97,6 @@
     <script src="lib/leaflet-routing-machine/leaflet-routing-machine.min.js"></script>
     <script src="js/functions.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/sidenav.js"></script>
 </body>
 </html>
