@@ -32,63 +32,44 @@
     -->
 </head>
 <body>
-    <!-- Accueil Start -->
-    <div id="start">
-        <div class="content">
-            <center>
-                <h1>Exposition Virtuelle Paris</h1>
-                <img class="illustration" src="assets/images/home.jpg" alt="">
-            </center>
-            
-            <p>
-                C’est l’histoire de rencontres.<br>
-                Une rencontre entre Païta et l’art, le dessin.<br>
-                Une rencontre entre Païta, et une association, le Secours Catholique.<br>
-                Une rencontre entre le Secours Catholique et des Urban sketchers®.<br>
-                Une rencontre entre Païta et des Urban sketchers®.<br>
-                <br>
-                Païta est une artiste, précurseur, dans les années 1950, du croquis urbain. Elle a dessiné Paris pendant des
-                décennies.<br>
-                <br>
-                Nous vous proposons d’aller à la rencontre de Païta, à travers ses œuvres et les œuvres des Urban sketchers®, qui
-                ont réinterprété certaines de ses œuvres.<br>
-                <br>
-                Grâce à la carte, découvrez le Paris de Païta réinterprété par 7 talentueux urban sketchers®<br>
-                <br>
-                Le Secours Catholique a décidé d’organiser cette exposition pour soutenir le patrimoine artistique de Païta, qui a
-                très généreusement décidé de léguer son patrimoine à notre association, le moment venu.<br>
-                <br>
-                Un grand merci à elle pour son soutien !<br>
-                <br>
-                Bonne visite à vous !<br>
-            </p>
-            
-            <p class="signature"><b>L'équipe du Secours Catholique</b></p>
-            
-            <br><br><br><br>
-            
-            
-            <center>
-                <button onclick="hideStart();">Débuter l'exposition</button>
-            </center>
-            
-            <br><br><br><br>
-            
-            <p>
-                <i>Contact Secours Catholique :</i><br>
-                Norah BILET <br>
-                <a href="tel:+33145497535">01 45 49 75 35</a><br>
-                <a href="mailto:norah.bilet@secours-catholique.org">norah.bilet@secours-catholique.org</a><br>
-            </p>
-        </div>
-    </div>
-    <!-- Accueil End -->
+    <?php
+        // Récupère le popup de bienvenue et d'aide
+        $welcome = file_get_contents('assets/html/accueil.html');
+        $help = file_get_contents('assets/html/aide.html');
 
-    <?php 
-        // Lit et affiche le contenu du fichier 
-        $sidenav = file_get_contents('sidenav.html');
+        // Si le cookie n'existe pas
+        if(!isset($_COOKIE['alreadyVisited'])) {
+            // On crée un cookie valable une heure
+            setcookie("alreadyVisited", 1, time()+3600);
+
+            // On affiche le popup de bienvenue et d'aide
+            $welcome = str_replace("{{display-start}}", "flex", $welcome);
+            $help = str_replace("{{display-start}}", "flex", $help);
+        }
+        else{
+            // On masque le popup de bienvenue et de l'aide
+            $welcome = str_replace("{{display-start}}", "none", $welcome);
+            $help = str_replace("{{display-start}}", "none", $help);
+        }
+
+        // On affiche le popup de bienvenue et d'aide
+        echo $welcome;
+        echo $help;
+    
+        // Affiche le menu 
+        $sidenav = file_get_contents('assets/html/sidenav.html');
         echo $sidenav;
+
     ?>
+
+    <div class="top">
+        <img class="btnOpenSideBar" src="assets/icons/menu.svg" onclick="openNav()" alt="">
+    </div>
+
+    <div class="bottom">
+        <img class="btnOpenSideBar" src="assets/icons/information.svg" onclick="openStart()" alt="i">
+        <img class="btnOpenSideBar" src="assets/icons/question.svg" onclick="openHelp()" alt="?">
+    </div>
 
     <div id="panorama"></div>
     <div id="map"></div>
@@ -97,6 +78,6 @@
     <script src="lib/leaflet-routing-machine/leaflet-routing-machine.min.js"></script>
     <script src="js/functions.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/sidenav.js"></script>
+    <script src="js/sidebar.js"></script>
 </body>
 </html>

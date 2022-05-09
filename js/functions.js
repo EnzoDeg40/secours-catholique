@@ -16,12 +16,20 @@ async function loadJson() {
         L.marker([x, y]).addTo(map)
         .bindPopup(
             `
+                <span>${reponseJson[i][0]}</span>
+                <img src="assets/icons/eye.svg" alt="Voir le panorama" onclick="panoOpen(\'${name}/${img}\', ${rot}, \'${additionalImgs}\')">
+                <img src="assets/icons/share.svg" alt="Partager ce point" onclick="share(\'${name}\')">
+            `
+        );
+        /*
+            .bindPopup(
+            `
                 <div>${reponseJson[i][0]}</div>
                 <img src="assets/icons/alt_route.svg" alt="Iténéraire vers ce point" onclick="go(${x},${y})">
                 <img src="assets/icons/eye.svg" alt="Voir le panorama" onclick="panoOpen(\'${name}/${img}\', ${rot}, \'${additionalImgs}\')">
                 <img src="assets/icons/share.svg" alt="Partager ce point" onclick="share(\'${name}\')">
             `
-        );
+        );*/
     }   
 }
 

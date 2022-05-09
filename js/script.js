@@ -36,6 +36,7 @@ function onLocationFound(e) {
     gps = e.latlng;
 }
 
+/* DESACTIVATION DE LA GÉOLOCALISATION TEMPORAIREMENT
 // Recupère constament la position de la personne
 map.locate({watch: true});
 
@@ -47,7 +48,7 @@ map.on('locationfound', onLocationFound);
 
 function locateMe(){
     map.panTo(gps);
-}
+}*/
 
 function go(x, y){
     L.Routing.control({
@@ -59,3 +60,12 @@ function go(x, y){
     }).addTo(map);
 }
 
+function openStart(){
+    document.getElementById("start").style.display = "flex";
+}
+
+function openHelp() {
+    document.getElementById("help").style.display = "flex";
+}
+
+document.getElementsByClassName('leaflet-control-zoom leaflet-bar leaflet-control')[0].style.display = 'none';

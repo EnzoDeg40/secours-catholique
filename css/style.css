@@ -5,6 +5,7 @@
 7 - btn close
 10 - panorama loading
 11 - panorama preview
+14 - help
 15 - start
 */
 
@@ -13,7 +14,7 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
-#panorama img, .top, .btnShowLocalisation{
+#panorama img, .top, .bottom, .btnShowLocalisation{
     position: absolute;
     z-index: 5;
     top: 5px;
@@ -23,6 +24,18 @@ body{
     background-color: white;
     border: 2.5px solid gray;
     cursor: pointer;
+}
+
+.bottom{
+    top: auto;
+    left: auto;
+    bottom: 5px;
+    right: 5px;
+}
+
+.top img, .bottom img{
+    width: 24px;
+    height: 24px;
 }
 
 #panorama iframe{
@@ -65,7 +78,7 @@ body{
     cursor: pointer;
 }
 
-#start{
+#help, #start{
     background-color: rgba(0, 0, 0, 0.5);
 
     width: 100%;
@@ -78,6 +91,20 @@ body{
 
     display: flex;
     justify-content:center;
+}
+
+#help {
+    z-index: 14;
+    text-align: center;
+}
+
+#help .content{
+    margin-top: 50px;
+}
+
+#help .content img{
+    width: 95%;
+    max-width: 700px;
 }
 
 #start .content{
