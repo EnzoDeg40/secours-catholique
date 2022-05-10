@@ -36,6 +36,7 @@
         // Récupère le popup de bienvenue et d'aide
         $welcome = file_get_contents('assets/html/accueil.html');
         $help = file_get_contents('assets/html/aide.html');
+        $helpPano = file_get_contents('assets/html/aidePano.html');
 
         // Si le cookie n'existe pas
         if(!isset($_COOKIE['alreadyVisited'])) {
@@ -55,6 +56,7 @@
         // On affiche le popup de bienvenue et d'aide
         echo $welcome;
         echo $help;
+        echo $helpPano;
     
         // Affiche le menu 
         $sidenav = file_get_contents('assets/html/sidenav.html');

@@ -14,6 +14,16 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+.helpPano {
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    top: auto !important;
+    left: auto !important;
+    bottom: 5px !important;
+    right: 5px !important;
+}
+
 #panorama img, .top, .bottom, .btnShowLocalisation{
     position: absolute;
     z-index: 5;
@@ -78,7 +88,7 @@ body{
     cursor: pointer;
 }
 
-#help, #start{
+#help, #start, #helpPano{
     background-color: rgba(0, 0, 0, 0.5);
 
     width: 100%;
@@ -93,17 +103,17 @@ body{
     justify-content:center;
 }
 
-#help {
+#help, #helpPano{
     z-index: 14;
     text-align: center;
 }
 
-#help .content img{
+#help .content img, #helpPano .content img{
     width: 95%;
     max-width: 700px;
 }
 
-#start .content, #help .content{
+#start .content, #help .content, #helpPano .content{
     margin: 15px;
     max-width: 700px;
     padding: 30px;

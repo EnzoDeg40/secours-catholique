@@ -40,7 +40,8 @@ function panoOpen(q, x, y, z, a){
     console.log(url);
     document.getElementById('panorama').innerHTML = 
     `<img src="assets/icons/close.svg" alt="" onclick="panoClose()">\
-    <iframe allowfullscreen src="${url}"></iframe>`;
+    <iframe allowfullscreen src="${url}"></iframe>
+    <img class="helpPano" src="assets/icons/question.svg" onclick="openHelpPano()" alt="?">`;
 }
 
 // Ferme le panorama actuellement ouvert

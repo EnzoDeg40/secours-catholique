@@ -68,6 +68,14 @@ function openHelp() {
     document.getElementById("help").style.display = "flex";
 }
 
+function openHelpPano() {
+    document.getElementById("helpPano").style.display = "flex";
+}
+
+function hideHelpPano() {
+    document.getElementById("helpPano").style.display = "none";
+}
+
 function hideHelp() {
     document.getElementById("help").style.display = "none";
 }
