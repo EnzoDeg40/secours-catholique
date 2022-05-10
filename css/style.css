@@ -98,16 +98,12 @@ body{
     text-align: center;
 }
 
-#help .content{
-    margin-top: 50px;
-}
-
 #help .content img{
     width: 95%;
     max-width: 700px;
 }
 
-#start .content{
+#start .content, #help .content{
     margin: 15px;
     max-width: 700px;
     padding: 30px;
@@ -125,7 +121,7 @@ body{
     margin: 0 auto;  
 }
 
-#start button{
+#start button, #help button{
     padding: 10px 15px;
     background-color: #005D91;
     border: none;

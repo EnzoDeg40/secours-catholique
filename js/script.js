@@ -68,4 +68,8 @@ function openHelp() {
     document.getElementById("help").style.display = "flex";
 }
 
+function hideHelp() {
+    document.getElementById("help").style.display = "none";
+}
+
 document.getElementsByClassName('leaflet-control-zoom leaflet-bar leaflet-control')[0].style.display = 'none';
