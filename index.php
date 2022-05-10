@@ -13,7 +13,7 @@
 <body>
     <div class="content">
         <img src="logo.png" alt="Secours Catholique">
-        <h1>Selectionner un site</h1>
+        <h1>Sélectionner un site</h1>
         <div class="links">
             <a href="outdoor.php">
                 <img src="assets/icons/smartphone.svg">

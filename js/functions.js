@@ -17,6 +17,7 @@ async function loadJson() {
         .bindPopup(
             `
                 <span>${reponseJson[i][0]}</span>
+                <br>
                 <img src="assets/icons/eye.svg" alt="Voir le panorama" onclick="panoOpen(\'${name}/${img}\', ${rot}, \'${additionalImgs}\')">
                 <img src="assets/icons/share.svg" alt="Partager ce point" onclick="share(\'${name}\')">
             `
