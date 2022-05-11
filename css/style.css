@@ -131,13 +131,14 @@ body{
     margin: 0 auto;  
 }
 
-#start button, #help button{
+#start button, #help button, #helpPano button{
     padding: 10px 15px;
     background-color: #005D91;
     border: none;
     border-radius: 999px;
     color: white;
     text-decoration: none;
+    cursor: pointer;
 }
 
 ::-webkit-scrollbar {
