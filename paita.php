@@ -23,7 +23,7 @@
         <img class="btnOpenSideBar" src="assets/icons/menu.svg" onclick="openNav()" alt="">
     </div>
 
-    <iframe src="cheat/Païta – Secours catholique.html" frameborder="0"></iframe>
+    <iframe src="assets/html/wp/Païta – Secours catholique.html" frameborder="0"></iframe>
 
     <script src="js/sidebar.js"></script>
 </body>
