@@ -133,10 +133,9 @@
         </div>            
     </div>
 
-    <!--<div id="imgsViewerPC" style="display:none;">-->
-    <div id="imgsViewerPC">
+    <div id="imgsViewerPC" style="display:none;">
         <span class="controler">
-            <button onclick="prevCarousel()"><img src="assets/icons/left.png" alt=""></button>
+            <button class="previous" onclick="prevCarousel()"><img src="assets/icons/left.png" alt=""></button>
         </span>
 
         <div id="carousel">
@@ -201,7 +200,7 @@
         </div>
         
         <span class="controler">
-            <button onclick="nextCarousel()"><img src="assets/icons/right.png" alt=""></button>
+            <button class="next" onclick="nextCarousel()"><img src="assets/icons/right.png" alt=""></button>
         </span>
     </div>
 

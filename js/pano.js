@@ -9,6 +9,8 @@ function showImgs(){
     else{
         imgsViewerPC.style.display = "flex";
     }
+
+    updateCarousel();
 }
 
 // Lorsque l'utilisateur appuie sur le button "Fermer le média"
