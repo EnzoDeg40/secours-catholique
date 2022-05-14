@@ -133,8 +133,8 @@
         </div>            
     </div>
 
-    <!--<div id="imgsViwerPC" style="display:none;">-->
-    <div id="imgsViwerPC">
+    <!--<div id="imgsViewerPC" style="display:none;">-->
+    <div id="imgsViewerPC">
         <span class="controler">
             <button onclick="prevCarousel()"><img src="assets/icons/left.png" alt=""></button>
         </span>
@@ -221,6 +221,7 @@
         const z = <?php echo $_GET['z']; ?>;
         const a = "<?php echo $_GET['a']; ?>";
     </script>
+    <script src="js/global.js"></script>
     <script src="js/pano.js"></script>
 </body>
 </html>

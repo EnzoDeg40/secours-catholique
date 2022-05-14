@@ -1,4 +1,4 @@
-#imgsViwerPC {
+#imgsViewerPC {
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, .5);
@@ -13,7 +13,7 @@
     justify-content: center;
 }
 
-#imgsViwerPC div {
+#imgsViewerPC div {
     background-color: white;
     border-radius: 10px;
 

@@ -33,7 +33,7 @@
     border-radius: 5px;
 }
 
-#imgsViewer .close, #imgsViwerPC .close{
+#imgsViewer .close, #imgsViewerPC .close{
     background-color: #015291;
     color: white;
     padding: 10px 15px;
